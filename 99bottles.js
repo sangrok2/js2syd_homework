@@ -26,10 +26,14 @@ var bottleTxt = "bottles";
 var lyrics = [ " of beer on the wall", " of beer.", "Take one down and pass it around, ", " no more bottles of beer on the wall" ]
 for (var beerNum = 99; beerNum >= 0; beerNum--) {
   if (beerNum >= 2) {
+
     console.log(beerNum + " " + bottleTxt + lyrics[0]+ ", " + beerNum + " " + bottleTxt + lyrics[1]);
-    console.log(lyrics[2] + --beerNum + " " + bottleTxt + lyrics[0] + ".");
-    beerNum++    
-  } else if (beerNum == 1) {
+    if (beerNum-1 == 1){
+      bottleTxt = "bottle";
+    }
+    console.log(lyrics[2] + (beerNum-1) + " " + bottleTxt + lyrics[0] + ".");
+  }
+  else if (beerNum == 1) {
     bottleTxt = "bottle";
     console.log(beerNum + " " + bottleTxt + lyrics[0]+ ", " + beerNum + " " + bottleTxt + lyrics[1]);
     console.log(lyrics[2] + lyrics[3] + ".");
